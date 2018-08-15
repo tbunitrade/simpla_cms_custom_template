@@ -9,26 +9,7 @@ body {
 
 p{margin-bottom: 15px;}
 
-h1 {
-  font-size: 30px;
-  margin-bottom: 10px;
-  font-weight: normal;
-  text-shadow: 0px 1px 0px #fff;
-}
 
-h2 {
-  clear: both;
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: normal;
-}
-
-h3 {
-  font-size: 16px;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  font-weight: normal;
-}
 
 //a { color: #0095eb; }
 //
@@ -79,6 +60,10 @@ e[type="button"] {
   margin-top: 6px;
   margin-left: 10px;
   color: #505050;
+
+  a {
+    color: black;
+  }
 }
 
 
@@ -263,7 +248,7 @@ e[type="button"] {
 
 /* @group Фильтр по свойствам */
 #features {
-  background-color: #f0f0f0;
+  /*background-color: #f0f0f0;*/
   border-top: 1px solid #d0d0d0;
   border-bottom: 1px solid #d0d0d0;
   margin-top: 20px;
@@ -550,7 +535,7 @@ input[type="password"]
 ul#deliveries{
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   border: 1px solid #e0e0e0;
   padding: 20px 20px 0 20px;
   list-style: none;

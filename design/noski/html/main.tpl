@@ -61,9 +61,7 @@
 												<span class="price">{$v->price|convert} <span class="currency">{$currency->sign|escape}</span></span>
 											</td>
 										</tr>
-										<br><br><br><br>
-
-
+<br><br>
 										<table width="100%" border="0" cellspacing="5" cellpadding="0" class="desc_table">
 
 											<tbody><tr>
@@ -78,64 +76,51 @@
 														Цвет: голубой<br>
 														Размер: 23-25<br>
 														Состав: хлопок - 80%, ПА - 15%, Спандекс - 5%</p>
-													<div id="cke_pastebin">
-														<table border="1" cellpadding="1" cellspacing="1" style="width: 510px;">
-															<tbody>
-															<tr>
-																<td>
-																	В магазинах Украины (розничная цена)</td>
-																<td>
-																	&nbsp;20 грн &nbsp;- <b>25</b>&nbsp;грн</td>
-															</tr>
-															<tr>
-																<td>
-																	&nbsp;Для клиентов сайта заказ от 250 грн&nbsp;</td>
-																<td>
-																	&nbsp;17,26 грн&nbsp;<span style="color: rgb(255, 0, 0);"><strong>СТАРАЯ ЦЕНА</strong></span></td>
-															</tr>
-															<tr>
-																<td>
-																	&nbsp;Для клиентов сайта заказ от&nbsp;<strong>200 грн</strong></td>
-																<td>
-																	&nbsp;<strong>11,42</strong>&nbsp;грн&nbsp;<strong>ЦЕНА С 7 МАРТА</strong></td>
-															</tr>
-															<tr>
-																<td>
-																	Для предпринимателей ОПТ от 1000грн</td>
-																<td>
-																	Детали в разделе " ЦЕНЫ ОПТ "</td>
-															</tr>
-															</tbody>
-														</table>
-													</div>
+
 												</td>
 
 											</tr>
 
-											<tr>
-												<td>
-													<table style="width:100%; min-width:400px;">
-														<tbody><tr>
-															<td colspan="2" style="width:50%; font-size:14px; font-weight:bold; text-align:center"></td>
-														</tr>
-														<tr>
-															<td style="width:50%; font-size:13px; font-weight:bold; text-align:center;">
+											</tbody>
+										</table>
+										<div class="row">
+											<div class="btn">
+												<input type="hidden" value="{$v->price|convert}" id="mydata">
+											</div>
+										</div>
+										<div class="row" >
 
-															</td>
-															<td style="width:50%; font-size:13px; font-weight:bold; text-align:center;">
+											<div class="col-xs-6 col-md-6">			В магазинах Украины (розничная цена)</div>
+											<div class="col-xs-6 col-md-6"> <input id="start" value="0"> грн - <b id="startb">0</b>&nbsp;грн</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6 col-md-6">
+												&nbsp;Для клиентов сайта заказ от 250 грн </div>
+											<div class="col-xs-6 col-md-6">
+												<div id="target250"></div> грн
+												<span style="color: rgb(255, 0, 0);">
+													<strong>СТАРАЯ ЦЕНА</strong>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6 col-md-6">
+												Для клиентов сайта заказ от <strong>200 грн</strong>
+											</div>
+											<div class="col-xs-6 col-md-6">
+												<strong id="target200"></strong> грн <strong>ЦЕНА С ... МАРТА</strong>
+											</div>
+										</div>
 
-															</td>
-														</tr>
-														<tr>
-															<td colspan="2" style="width:50%; font-size:14px; font-weight:bold; text-align:center"><hr></td>
-														</tr>
-														<tr>
-														</tr></tbody></table>
+										<div class="row">
+											<div class="col-md-6">
+												Для предпринимателей ОПТ от 1000 грн
+											</div>
 
-												</td>
-											</tr>
-											</tbody></table>
+											<div class="col-md-6">
+												Детали в разделе " ЦЕНЫ ОПТ "
+											</div>
 
+										</div>
                                     {/foreach}
 
 								<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>

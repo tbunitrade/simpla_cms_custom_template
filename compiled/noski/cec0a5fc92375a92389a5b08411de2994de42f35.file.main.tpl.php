@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2018-08-15 14:29:40
+<?php /* Smarty version Smarty-3.1.18, created on 2018-08-15 17:10:03
          compiled from "D:\myserver\OSPanel\domains\simpla-noski\design\noski\html\main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:54735b73ab71433aa6-73371613%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cec0a5fc92375a92389a5b08411de2994de42f35' => 
     array (
       0 => 'D:\\myserver\\OSPanel\\domains\\simpla-noski\\design\\noski\\html\\main.tpl',
-      1 => 1534332574,
+      1 => 1534342193,
       2 => 'file',
     ),
   ),
@@ -121,9 +121,7 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
 </span></span>
 											</td>
 										</tr>
-										<br><br><br><br>
-
-
+<br><br>
 										<table width="100%" border="0" cellspacing="5" cellpadding="0" class="desc_table">
 
 											<tbody><tr>
@@ -138,64 +136,52 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
 														Цвет: голубой<br>
 														Размер: 23-25<br>
 														Состав: хлопок - 80%, ПА - 15%, Спандекс - 5%</p>
-													<div id="cke_pastebin">
-														<table border="1" cellpadding="1" cellspacing="1" style="width: 510px;">
-															<tbody>
-															<tr>
-																<td>
-																	В магазинах Украины (розничная цена)</td>
-																<td>
-																	&nbsp;20 грн &nbsp;- <b>25</b>&nbsp;грн</td>
-															</tr>
-															<tr>
-																<td>
-																	&nbsp;Для клиентов сайта заказ от 250 грн&nbsp;</td>
-																<td>
-																	&nbsp;17,26 грн&nbsp;<span style="color: rgb(255, 0, 0);"><strong>СТАРАЯ ЦЕНА</strong></span></td>
-															</tr>
-															<tr>
-																<td>
-																	&nbsp;Для клиентов сайта заказ от&nbsp;<strong>200 грн</strong></td>
-																<td>
-																	&nbsp;<strong>11,42</strong>&nbsp;грн&nbsp;<strong>ЦЕНА С 7 МАРТА</strong></td>
-															</tr>
-															<tr>
-																<td>
-																	Для предпринимателей ОПТ от 1000грн</td>
-																<td>
-																	Детали в разделе " ЦЕНЫ ОПТ "</td>
-															</tr>
-															</tbody>
-														</table>
-													</div>
+
 												</td>
 
 											</tr>
 
-											<tr>
-												<td>
-													<table style="width:100%; min-width:400px;">
-														<tbody><tr>
-															<td colspan="2" style="width:50%; font-size:14px; font-weight:bold; text-align:center"></td>
-														</tr>
-														<tr>
-															<td style="width:50%; font-size:13px; font-weight:bold; text-align:center;">
+											</tbody>
+										</table>
+										<div class="row">
+											<div class="btn">
+												<input type="hidden" value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['convert'][0][0]->convert($_smarty_tpl->tpl_vars['v']->value->price);?>
+" id="mydata">
+											</div>
+										</div>
+										<div class="row" >
 
-															</td>
-															<td style="width:50%; font-size:13px; font-weight:bold; text-align:center;">
+											<div class="col-xs-6 col-md-6">			В магазинах Украины (розничная цена)</div>
+											<div class="col-xs-6 col-md-6"> <input id="start" value="0"> грн - <b id="startb">0</b>&nbsp;грн</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6 col-md-6">
+												&nbsp;Для клиентов сайта заказ от 250 грн </div>
+											<div class="col-xs-6 col-md-6">
+												<div id="target250"></div> грн
+												<span style="color: rgb(255, 0, 0);">
+													<strong>СТАРАЯ ЦЕНА</strong>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-6 col-md-6">
+												Для клиентов сайта заказ от <strong>200 грн</strong>
+											</div>
+											<div class="col-xs-6 col-md-6">
+												<strong id="target200"></strong> грн <strong>ЦЕНА С ... МАРТА</strong>
+											</div>
+										</div>
 
-															</td>
-														</tr>
-														<tr>
-															<td colspan="2" style="width:50%; font-size:14px; font-weight:bold; text-align:center"><hr></td>
-														</tr>
-														<tr>
-														</tr></tbody></table>
+										<div class="row">
+											<div class="col-md-6">
+												Для предпринимателей ОПТ от 1000 грн
+											</div>
 
-												</td>
-											</tr>
-											</tbody></table>
+											<div class="col-md-6">
+												Детали в разделе " ЦЕНЫ ОПТ "
+											</div>
 
+										</div>
                                     <?php } ?>
 
 								<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>

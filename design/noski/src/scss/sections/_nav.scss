@@ -14,7 +14,11 @@
 
   .topMenu {
     outline: 0px solid white;
-    display: inline-block;
+    display: none;
+
+    @media (min-width: $screen-sm-min)    {
+      display: inline-block;
+    }
 
     li {
       display: inline-block;
