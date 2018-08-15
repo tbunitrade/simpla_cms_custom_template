@@ -1,0 +1,5 @@
+AddType application/octet-stream csv
+AuthName "Simpla CMS"
+AuthType Basic
+AuthUserFile D:\myserver\OSPanel\domains\simpla-noski/simpla/.passwd
+require valid-user

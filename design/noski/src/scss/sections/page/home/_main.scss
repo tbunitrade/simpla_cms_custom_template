@@ -1,0 +1,72 @@
+.wrap {
+  background: $background;
+
+  .topContainer {
+
+    .topMenu {
+
+      .menu-item {
+
+
+
+        .menuHref {
+          text-decoration: none;
+          color: $menuHref;
+        }
+
+        &:hover {
+
+          .menuHref {
+            border: 0px solid #d5d5d5;
+            /*background-color: #ffffff;*/
+            padding: 5px 10px 6px 10px;
+            padding: 0;
+            /*border-radius: 20px;*/
+            text-decoration: none;
+          }
+
+        }
+      }
+
+      .selected      {
+        border: 0px solid #d5d5d5;
+        /*background-color: #ffffff;*/
+        padding: 5px 10px 6px 10px;
+        padding: 0;
+        /*border-radius: 20px;*/
+        text-decoration: none;
+
+      }
+    }
+
+
+  }/*top container*/
+
+  .headerBaner {
+
+    .titleMe {
+      font-size: 13px;
+      line-height: 20px;
+      text-align: left;
+      font-weight: bold;
+      color: $color;
+    }
+
+    .bannerHere {
+      background-size: cover;
+      width: 100%;
+      max-width: 1000px;
+      height: 200px;
+      //background-image: url('/css/css/img/head.jpg');
+      //background-image: url('/css/img/head.jpg');
+      //background-image: url('../img/head.jpg');
+
+      background-image: url('/design/noski/css/img/head.jpg');
+
+      background-repeat: no-repeat;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+}

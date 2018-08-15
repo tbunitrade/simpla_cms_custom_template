@@ -1,0 +1,26 @@
+#search{
+  margin-top: 9px;
+  margin-bottom: 10px;
+  height: 28px;
+
+  .input_search{
+    width: 100%;
+    max-width: 170px;
+    height: 20px;
+    font-size: 12px;
+    border: 1px solid #b0b0b0;
+    display: block;
+    float: left;
+  }
+  .button_search {
+    width: 32px;
+    height: 28px;
+    background-position-y: middle;
+    background: url(../images/search.png) no-repeat;
+    border-style: none;
+    cursor: pointer;
+    cursor: hand;
+    display: block;
+    float: left;
+  }
+}

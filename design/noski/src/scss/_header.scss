@@ -1,0 +1,22 @@
+body {
+  background: red;
+}
+.wrap {
+  width: 100%;
+  max-width: 1100px;
+  display: block;
+  margin: auto;
+  background: #ccc;
+
+  .header {
+    width: 100%;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    background-color: rgb(1, 23, 108);
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+
+  }
+}

@@ -1,0 +1,34 @@
+/*for header*/
+//@import 'modal';
+
+/*header parts*/
+//@import "nav";
+//@import "nav-mobile";
+
+/*Templates part*/
+
+/*Templates part*/
+@import 'sidebar/main';
+/*Templates for homepage */
+@import 'page/home/main';
+@import 'page/more';
+//@import 'page/howitworks';
+//@import 'page/lotterywinings';
+/*Templates for contacts */
+@import 'page/contacts/main';
+
+
+/*more style for forms*/
+
+@import 'page/registration';
+//@import 'page/withdrawal';
+//@import 'page/formstyle';
+@import 'function/search';
+//@import 'page/profile/edit';
+//@import 'page/profile/lottery';
+//@import 'page/profile/choosingrows';
+
+//@import 'page/marketing/profile';
+//@import 'page/marketing/profile2';
+//@import 'page/marketing/profile3';
+//@import 'page/marketing/networkstyle';

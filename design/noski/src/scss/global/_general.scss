@@ -1,0 +1,236 @@
+  body {
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    height: 100%;
+    color: $black;
+    line-height: 16px;
+    position: relative;
+    transition: 0.27s;
+    direction: rtl;
+  }
+
+  .container-fluid {
+
+  }
+
+  .row0 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 1440px;
+    min-width: 319px;
+    margin: auto;
+    display: block;
+    outline: 0px solid red;
+
+    .row {
+     margin: 0;
+    }
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .container {
+
+    @media (min-width: $screen-md-min) {
+      width: 960px;
+    }
+  }
+
+  * {
+      border:0px solid red;
+      outline: 0px solid red;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+/*---------------------------------------
+   Typography
+-----------------------------------------*/
+
+  .row-no-padding [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0
+  }
+
+  /* HEADINGS */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  em,
+  span,
+  p{
+    font-family: 'Heebo', sans-serif;
+    color: $black;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  //@font-face {
+  //  font-family: 'FontAwesome';
+  //  src: url('../fonts/fontawesome/fontawesome-webfont.ttf') format("truetype");
+  //  font-weight: 400;
+  //  font-style: normal;
+  //}
+  //
+  //@font-face {
+  //  font-family: 'FontAwesome';
+  //  font-weight: normal;
+  //  font-style: normal;
+  //  src: url('../fonts/webfonts/fa-regular-400.ttf') format("truetype");
+  //  src: url('../fonts/webfonts/fa-solid-900.ttf') format("truetype");
+  //  src: url('../fonts/webfonts/fa-brands-400.ttf') format("truetype");
+  //}
+
+
+  @font-face {
+    font-family: 'Open Sans Hebrew';
+    src: url('../fonts/opensanshebrew/OpenSansHebrew-Light.ttf') format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans Hebrew';
+    src: url('../fonts/opensanshebrew/OpenSansHebrew-LightItalic.ttf') format("truetype");
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Open Sans Hebrew';
+    src: url('../fonts/opensanshebrew/OpenSansHebrew-Regular.ttf') format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans Hebrew';
+    src: url('../fonts/opensanshebrew/OpenSansHebrew-Italic.ttf') format("truetype");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Open Sans Hebrew';
+    src: url('../fonts/opensanshebrew/OpenSansHebrew-Bold.ttf') format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans Hebrew';
+    src: url('../fonts/opensanshebrew/OpenSansHebrew-BoldItalic.ttf') format("truetype");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Open Sans Hebrew';
+    src: url('../fonts/opensanshebrew/OpenSansHebrew-ExtraBold.ttf') format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans Hebrew';
+    src: url('../fonts/opensanshebrew/OpenSansHebrew-ExtraBoldItalic.ttf') format("truetype");
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/heebo/Heebo-Thin.ttf') format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/heebo/Heebo-Light.ttf') format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/heebo/Heebo-Regular.ttf') format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/heebo/Heebo-Medium.ttf') format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/heebo/Heebo-Bold.ttf') format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/heebo/Heebo-Black.ttf') format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/heebo/Heebo-ExtraBold.ttf') format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Arvo';
+    src: url('../fonts/arvo/Arvo-BoldItalic.ttf') format("truetype");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Arvo';
+    src: url('../fonts/arvo/Arvo-Bold.ttf') format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Arvo';
+    src: url('../fonts/arvo/Arvo-Regular.ttf') format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Arvo';
+    src: url('../fonts/arvo/Arvo-Italic.ttf') format("truetype");
+    font-weight: 400;
+    font-style: italic;
+  }
+
