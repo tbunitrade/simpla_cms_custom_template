@@ -1,1 +1,107 @@
+/* @group Верхняя строка */
+#top_background{
+  min-height: 44px;
+  padding-top: 10px;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+#top{
+  margin:0px auto;
+  width: 100%;
+  max-width: 940px;
+  display: block;
 
+  .topMenu {
+    outline: 0px solid white;
+    display: inline-block;
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 30px;
+      height: 30px;
+      padding: 0px 10px;
+
+      @media (min-width: $screen-md-min) {
+        padding: 0px 16px;
+      }
+    }
+
+    .selected  {
+      font-weight: bold;
+
+      a {
+        font-weight: bold;
+      }
+    }
+
+  }
+}
+
+
+.noskiMenu {
+
+  .myUl{
+
+    .menu-item{
+      display: inline-block;
+      vertical-align: top;
+
+      .myHref{
+        color: $coloryellow;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 13px;
+      }
+    }
+  }
+}
+
+
+/* @group Постраничная навигация */
+.pagination {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  overflow: hidden;
+}
+.pagination a {
+  display: block;
+  float: left;
+  //background-color: #fffeff;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 7px 4px;
+  min-width: 22px;
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  text-decoration: none;
+}
+.pagination a.selected:hover,
+.pagination a.selected {
+  //background-color: #18a5ff;
+  color: #ffffff;
+  border-color: #008fe9;
+}
+.pagination a:hover {
+  //background-color: #f8f8f8;
+}
+
+.pagination a.next_page_link, .pagination a.prev_page_link{
+  border: none;
+  background: none;
+}
+
+.btn-primary {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 7px 4px;
+  min-width: 22px;
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  text-decoration: none;
+  background: transparent;
+  background-color: transparent;
+  font-size: 13px;
+}

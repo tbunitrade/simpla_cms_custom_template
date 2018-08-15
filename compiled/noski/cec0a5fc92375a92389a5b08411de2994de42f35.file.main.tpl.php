@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2018-08-15 07:26:25
+<?php /* Smarty version Smarty-3.1.18, created on 2018-08-15 14:29:40
          compiled from "D:\myserver\OSPanel\domains\simpla-noski\design\noski\html\main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:54735b73ab71433aa6-73371613%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cec0a5fc92375a92389a5b08411de2994de42f35' => 
     array (
       0 => 'D:\\myserver\\OSPanel\\domains\\simpla-noski\\design\\noski\\html\\main.tpl',
-      1 => 1534057487,
+      1 => 1534332574,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_5b73ab71762738_52860822',
   'variables' => 
   array (
     'page' => 0,
@@ -26,8 +28,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'discounted_products' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5b73ab71762738_52860822',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5b73ab71762738_52860822')) {function content_5b73ab71762738_52860822($_smarty_tpl) {?>
 
@@ -55,40 +55,45 @@ if ($_smarty_tpl->parent != null) $_smarty_tpl->parent->tpl_vars['canonical'] = 
 <?php if ($_smarty_tpl->tpl_vars['featured_products']->value) {?>
 <!-- Список товаров-->
 <h1>Рекомендуемые товары</h1>
-<ul class="tiny_products">
+	<div class="row">
 
-	<?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
+
+		<ul class="tiny_products">
+
+			<?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['featured_products']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['product']->key => $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->_loop = true;
 ?>
-	<!-- Товар-->
-	<li class="product">
-		
-		<!-- Фото товара -->
-		<?php if ($_smarty_tpl->tpl_vars['product']->value->image) {?>
-		<div class="image">
-			<a href="products/<?php echo $_smarty_tpl->tpl_vars['product']->value->url;?>
+			<!-- Товар-->
+			<li class="col-sm-12 col-md-12 product">
+				<div class="row">
+					<div class="col-sm-12 col-md-4">
+						<!-- Фото товара -->
+                        <?php if ($_smarty_tpl->tpl_vars['product']->value->image) {?>
+							<div class="image">
+								<a href="products/<?php echo $_smarty_tpl->tpl_vars['product']->value->url;?>
 "><img src="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['resize'][0][0]->resize_modifier($_smarty_tpl->tpl_vars['product']->value->image->filename,200,200);?>
 " alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value->name, ENT_QUOTES, 'UTF-8', true);?>
 "/></a>
-		</div>
-		<?php }?>
-		<!-- Фото товара (The End) -->
+							</div>
+                        <?php }?>
+						<!-- Фото товара (The End) -->
+					</div>
 
-		<!-- Название товара -->
-		<h3><a data-product="<?php echo $_smarty_tpl->tpl_vars['product']->value->id;?>
+					<div class="col-sm-12 col-md-8">
+						<!-- Название товара -->
+						<h3><a data-product="<?php echo $_smarty_tpl->tpl_vars['product']->value->id;?>
 " href="products/<?php echo $_smarty_tpl->tpl_vars['product']->value->url;?>
 "><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value->name, ENT_QUOTES, 'UTF-8', true);?>
 </a></h3>
-		<!-- Название товара (The End) -->
-		
+						<!-- Название товара (The End) -->
 
-		<?php if (count($_smarty_tpl->tpl_vars['product']->value->variants)>0) {?>
-		<!-- Выбор варианта товара -->
-		<form class="variants" action="/cart">
-			<table>
-			<?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
+                        <?php if (count($_smarty_tpl->tpl_vars['product']->value->variants)>0) {?>
+							<!-- Выбор варианта товара -->
+							<form class="variants" action="/cart">
+
+                                    <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['product']->value->variants; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
  $_smarty_tpl->tpl_vars['v']->index=-1;
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value) {
@@ -96,39 +101,125 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
  $_smarty_tpl->tpl_vars['v']->index++;
  $_smarty_tpl->tpl_vars['v']->first = $_smarty_tpl->tpl_vars['v']->index === 0;
 ?>
-			<tr class="variant">
-				<td>
-					<input id="featured_<?php echo $_smarty_tpl->tpl_vars['v']->value->id;?>
+
+										<tr class="variant">
+											<td>
+												<input id="variants_<?php echo $_smarty_tpl->tpl_vars['v']->value->id;?>
 " name="variant" value="<?php echo $_smarty_tpl->tpl_vars['v']->value->id;?>
 " type="radio" class="variant_radiobutton" <?php if ($_smarty_tpl->tpl_vars['v']->first) {?>checked<?php }?> <?php if (count($_smarty_tpl->tpl_vars['product']->value->variants)<2) {?>style="display:none;"<?php }?>/>
-				</td>
-				<td>
-					<?php if ($_smarty_tpl->tpl_vars['v']->value->name) {?><label class="variant_name" for="featured_<?php echo $_smarty_tpl->tpl_vars['v']->value->id;?>
+											</td>
+											<td>
+                                                <?php if ($_smarty_tpl->tpl_vars['v']->value->name) {?><label class="variant_name" for="variants_<?php echo $_smarty_tpl->tpl_vars['v']->value->id;?>
 "><?php echo $_smarty_tpl->tpl_vars['v']->value->name;?>
 </label><?php }?>
-				</td>
-				<td>
-					<?php if ($_smarty_tpl->tpl_vars['v']->value->compare_price>0) {?><span class="compare_price"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['convert'][0][0]->convert($_smarty_tpl->tpl_vars['v']->value->compare_price);?>
+											</td>
+											<td>
+                                                <?php if ($_smarty_tpl->tpl_vars['v']->value->compare_price>0) {?><span class="compare_price"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['convert'][0][0]->convert($_smarty_tpl->tpl_vars['v']->value->compare_price);?>
 </span><?php }?>
-					<span class="price"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['convert'][0][0]->convert($_smarty_tpl->tpl_vars['v']->value->price);?>
+												<span class="price"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['convert'][0][0]->convert($_smarty_tpl->tpl_vars['v']->value->price);?>
  <span class="currency"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currency']->value->sign, ENT_QUOTES, 'UTF-8', true);?>
 </span></span>
-				</td>
-			</tr>
-			<?php } ?>
-			</table>
-			<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
-		</form>
-		<!-- Выбор варианта товара (The End) -->
-		<?php } else { ?>
-			Нет в наличии
-		<?php }?>
+											</td>
+										</tr>
+										<br><br><br><br>
 
-	</li>
-	<!-- Товар (The End)-->
-	<?php } ?>
-			
-</ul>
+
+										<table width="100%" border="0" cellspacing="5" cellpadding="0" class="desc_table">
+
+											<tbody><tr>
+
+												<td class="style9">Носки женские ТМ Акцент (арт. 0196) ( ДОПРОДАЖА - ЦЕНА 2014 ГОДА) </td>
+
+											</tr>
+
+											<tr>
+
+												<td><p>
+														Цвет: голубой<br>
+														Размер: 23-25<br>
+														Состав: хлопок - 80%, ПА - 15%, Спандекс - 5%</p>
+													<div id="cke_pastebin">
+														<table border="1" cellpadding="1" cellspacing="1" style="width: 510px;">
+															<tbody>
+															<tr>
+																<td>
+																	В магазинах Украины (розничная цена)</td>
+																<td>
+																	&nbsp;20 грн &nbsp;- <b>25</b>&nbsp;грн</td>
+															</tr>
+															<tr>
+																<td>
+																	&nbsp;Для клиентов сайта заказ от 250 грн&nbsp;</td>
+																<td>
+																	&nbsp;17,26 грн&nbsp;<span style="color: rgb(255, 0, 0);"><strong>СТАРАЯ ЦЕНА</strong></span></td>
+															</tr>
+															<tr>
+																<td>
+																	&nbsp;Для клиентов сайта заказ от&nbsp;<strong>200 грн</strong></td>
+																<td>
+																	&nbsp;<strong>11,42</strong>&nbsp;грн&nbsp;<strong>ЦЕНА С 7 МАРТА</strong></td>
+															</tr>
+															<tr>
+																<td>
+																	Для предпринимателей ОПТ от 1000грн</td>
+																<td>
+																	Детали в разделе " ЦЕНЫ ОПТ "</td>
+															</tr>
+															</tbody>
+														</table>
+													</div>
+												</td>
+
+											</tr>
+
+											<tr>
+												<td>
+													<table style="width:100%; min-width:400px;">
+														<tbody><tr>
+															<td colspan="2" style="width:50%; font-size:14px; font-weight:bold; text-align:center"></td>
+														</tr>
+														<tr>
+															<td style="width:50%; font-size:13px; font-weight:bold; text-align:center;">
+
+															</td>
+															<td style="width:50%; font-size:13px; font-weight:bold; text-align:center;">
+
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2" style="width:50%; font-size:14px; font-weight:bold; text-align:center"><hr></td>
+														</tr>
+														<tr>
+														</tr></tbody></table>
+
+												</td>
+											</tr>
+											</tbody></table>
+
+                                    <?php } ?>
+
+								<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
+							</form>
+							<!-- Выбор варианта товара (The End) -->
+                        <?php } else { ?>
+							Нет в наличии
+                        <?php }?>
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+			</li>
+			<!-- Товар (The End)-->
+			<?php } ?>
+
+		</ul>
+	</div>
 <?php }?>
 
 

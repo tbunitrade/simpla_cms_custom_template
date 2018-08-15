@@ -7,161 +7,193 @@
 <head>
 	<base href="{$config->root_url}/"/>
 	<title>{$meta_title|escape}</title>
-	
-	{* Метатеги *}
+
+    {* Метатеги *}
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="description" content="{$meta_description|escape}" />
 	<meta name="keywords"    content="{$meta_keywords|escape}" />
-	<meta name="viewport" content="width=1024"/>
-	
-	{* Канонический адрес страницы *}
-	{if isset($canonical)}<link rel="canonical" href="{$config->root_url}{$canonical}"/>{/if}
-	
-	{* Стили *}
+	<meta name="viewport" content="width=device-width,minimal-scale:1"/>
+
+    {* Канонический адрес страницы *}
+    {if isset($canonical)}<link rel="canonical" href="{$config->root_url}{$canonical}"/>{/if}
+
+    {* Стили *}
+	<link href="design/{$settings->theme|escape}/css/css/vendor.css" rel="stylesheet" type="text/css" media="screen"/>
 	<link href="design/{$settings->theme|escape}/css/style.css" rel="stylesheet" type="text/css" media="screen"/>
 	<link href="design/{$settings->theme|escape}/images/favicon.ico" rel="icon"          type="image/x-icon"/>
 	<link href="design/{$settings->theme|escape}/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-	
-	{* JQuery *}
-	<script src="js/jquery/jquery.js"  type="text/javascript"></script>
-	
-	{* Всплывающие подсказки для администратора *}
-	{if $smarty.session.admin == 'admin'}
-	<script src ="js/admintooltip/admintooltip.js" type="text/javascript"></script>
-	<link   href="js/admintooltip/css/admintooltip.css" rel="stylesheet" type="text/css" /> 
-	{/if}
-	
-	{* Ctrl-навигация на соседние товары *}
-	<script type="text/javascript" src="js/ctrlnavigate.js"></script>           
-	
-	{* Аяксовая корзина *}
+
+    {* JQuery *}
+	{*<script src="js/jquery/jquery.js"  type="text/javascript"></script>*}
+	<script
+			src="https://code.jquery.com/jquery-2.2.4.js"
+			integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			crossorigin="anonymous"></script>
+
+    {* Всплывающие подсказки для администратора *}
+    {if $smarty.session.admin == 'admin'}
+		<script src ="js/admintooltip/admintooltip.js" type="text/javascript"></script>
+		<link   href="js/admintooltip/css/admintooltip.css" rel="stylesheet" type="text/css" />
+    {/if}
+
+    {* Ctrl-навигация на соседние товары *}
+	<script type="text/javascript" src="js/ctrlnavigate.js"></script>
+
+    {* Аяксовая корзина *}
 	<script src="design/{$settings->theme}/js/jquery-ui.min.js"></script>
 	<script src="design/{$settings->theme}/js/ajax_cart.js"></script>
-	
-	{* js-проверка форм *}
+
+    {* js-проверка форм *}
 	<script src="js/baloon/js/baloon.js" type="text/javascript"></script>
-	<link   href="js/baloon/css/baloon.css" rel="stylesheet" type="text/css" /> 
-	
-	{* Автозаполнитель поиска *}
-	{literal}
-	<script src="js/autocomplete/jquery.autocomplete-min.js" type="text/javascript"></script>
-	<style>
-		.autocomplete-suggestions{
-		background-color: #ffffff;
-		overflow: hidden;
-		border: 1px solid #e0e0e0;
-		overflow-y: auto;
-		}
-		.autocomplete-suggestions .autocomplete-suggestion{cursor: default;}
-		.autocomplete-suggestions .selected { background:#F0F0F0; }
-		.autocomplete-suggestions div { padding:2px 5px; white-space:nowrap; }
-		.autocomplete-suggestions strong { font-weight:normal; color:#3399FF; }
-	</style>	
-	<script>
-	$(function() {
-		//  Автозаполнитель поиска
-		$(".input_search").autocomplete({
-			serviceUrl:'ajax/search_products.php',
-			minChars:1,
-			noCache: false, 
-			onSelect:
-				function(suggestion){
-					 $(".input_search").closest('form').submit();
-				},
-			formatResult:
-				function(suggestion, currentValue){
-					var reEscape = new RegExp('(\\' + ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'].join('|\\') + ')', 'g');
-					var pattern = '(' + currentValue.replace(reEscape, '\\$1') + ')';
-	  				return (suggestion.data.image?"<img align=absmiddle src='"+suggestion.data.image+"'> ":'') + suggestion.value.replace(new RegExp(pattern, 'gi'), '<strong>$1<\/strong>');
-				}	
-		});
-	});
-	</script>
-	{/literal}
-		
-			
+	<link   href="js/baloon/css/baloon.css" rel="stylesheet" type="text/css" />
+
+    {* Автозаполнитель поиска *}
+    {literal}
+		<script src="js/autocomplete/jquery.autocomplete-min.js" type="text/javascript"></script>
+		<style>
+			.autocomplete-suggestions{
+				background-color: #ffffff;
+				overflow: hidden;
+				border: 1px solid #e0e0e0;
+				overflow-y: auto;
+			}
+			.autocomplete-suggestions .autocomplete-suggestion{cursor: default;}
+			.autocomplete-suggestions .selected { background:#F0F0F0; }
+			.autocomplete-suggestions div { padding:2px 5px; white-space:nowrap; }
+			.autocomplete-suggestions strong { font-weight:normal; color:#3399FF; }
+		</style>
+		<script>
+            $(function() {
+                //  Автозаполнитель поиска
+                $(".input_search").autocomplete({
+                    serviceUrl:'ajax/search_products.php',
+                    minChars:1,
+                    noCache: false,
+                    onSelect:
+                        function(suggestion){
+                            $(".input_search").closest('form').submit();
+                        },
+                    formatResult:
+                        function(suggestion, currentValue){
+                            var reEscape = new RegExp('(\\' + ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'].join('|\\') + ')', 'g');
+                            var pattern = '(' + currentValue.replace(reEscape, '\\$1') + ')';
+                            return (suggestion.data.image?"<img align=absmiddle src='"+suggestion.data.image+"'> ":'') + suggestion.value.replace(new RegExp(pattern, 'gi'), '<strong>$1<\/strong>');
+                        }
+                });
+            });
+		</script>
+    {/literal}
+
+
 </head>
 <body>
-	<div class="wrap">
+	<div class="container">
+		<div class="row">
 
+			<div id="top_background" class="row">
+				<div id="top" class="topContainer">
 
-		<!-- Верхняя строка -->
-		<div id="top_background">
-			<div id="top" class="topContainer">
+					<!-- Меню -->
+					<ul id="menu" class="topMenu">
+                        {foreach $pages as $p}
+                            {* Выводим только страницы из первого меню *}
+                            {if $p->menu_id == 1}
+								<li сlass="menu-item" {if $page && $page->id == $p->id}class="selected"{/if}>
+									<a class="menuHref" data-page="{$p->id}" href="{$p->url}">{$p->name|escape}</a>
+								</li>
+                            {/if}
+                        {/foreach}
+					</ul>
+					<!-- Меню (The End) -->
 
-				<!-- Меню -->
-				<ul id="menu" class="topMenu">
-					{foreach $pages as $p}
-						{* Выводим только страницы из первого меню *}
-						{if $p->menu_id == 1}
-						<li {if $page && $page->id == $p->id}class="menu-item selected"{/if}>
-							<a class="menuHref" data-page="{$p->id}" href="{$p->url}">{$p->name|escape}</a>
-						</li>
-						{/if}
-					{/foreach}
-				</ul>
-				<!-- Меню (The End) -->
+					<!-- Корзина -->
+					<div id="cart_informer">
+                        {* Обновляемая аяксом корзина должна быть в отдельном файле *}
+                        {include file='cart_informer.tpl'}
+					</div>
+					<!-- Корзина (The End)-->
 
-				<!-- Корзина -->
-				<div id="cart_informer">
-					{* Обновляемая аяксом корзина должна быть в отдельном файле *}
-					{include file='cart_informer.tpl'}
-				</div>
-				<!-- Корзина (The End)-->
-
-				<!-- Вход пользователя -->
-				<div id="account" class="account">
-					{if $user}
-						<span id="username">
+					<!-- Вход пользователя -->
+					<div id="account" class="account">
+                        {if $user}
+							<span id="username">
 							<a href="user">{$user->name}</a>{if $group->discount>0},
 							ваша скидка &mdash; {$group->discount}%{/if}
 						</span>
-						<a id="logout" href="user/logout">выйти</a>
-					{else}
-						<a id="register" href="user/register">Регистрация</a>
-						<a id="login" href="user/login">Вход</a>
-					{/if}
-				</div>
-				<!-- Вход пользователя (The End)-->
+							<a id="logout" href="user/logout">выйти</a>
+                        {else}
+							<a id="register" href="user/register">Регистрация</a>
+							<a id="login" href="user/login">Вход</a>
+                        {/if}
+					</div>
+					<!-- Вход пользователя (The End)-->
 
+				</div>
 			</div>
+			<!-- Верхняя строка (The End)-->
 		</div>
-		<!-- Верхняя строка (The End)-->
+		<div class="row">
+			<div id="header" class="header">
+				<div class="titleMe">
+					Сайт официального дистрибьютора торговых марок: ТМ Акцент, ТМ Бонус, ТМ Легка хода
+				</div>
+				<div class="bannerHere">
+
+				</div>
+
+
+
+                {*<div id="logo">*}
+                {*<a href="/"><img src="design/{$settings->theme|escape}/images/logo.png" title="{$settings->site_name|escape}" alt="{$settings->site_name|escape}"/></a>*}
+                {*</div>	*}
+                {*<div id="contact">*}
+                {*(095) <span id="phone">545-54-54</span>*}
+                {*<div id="address">Москва, шоссе Энтузиастов 45/31, офис 453</div>*}
+                {*</div>	*}
+			</div>
+
+		</div>
+
+
+		<!-- Верхняя строка -->
+
 
 
 		<!-- Шапка -->
-		<div id="header" class="headerBaner">
-			<div class="titleMe">
-				Сайт официального дистрибьютора торговых марок: ТМ Акцент, ТМ Бонус, ТМ Легка хода
-			</div>
-			<div class="bannerHere">
 
-			</div>
-
-
-
-			{*<div id="logo">*}
-				{*<a href="/"><img src="design/{$settings->theme|escape}/images/logo.png" title="{$settings->site_name|escape}" alt="{$settings->site_name|escape}"/></a>*}
-			{*</div>	*}
-			{*<div id="contact">*}
-				{*(095) <span id="phone">545-54-54</span>*}
-				{*<div id="address">Москва, шоссе Энтузиастов 45/31, офис 453</div>*}
-			{*</div>	*}
-		</div>
 		<!-- Шапка (The End)-->
 
 
 		<!-- Вся страница -->
-		<div id="main">
-
-			<!-- Основная часть -->
-			<div id="content">
-				{$content}
-			</div>
+		<div id="main" class="row">
 			<!-- Основная часть (The End) -->
+			<div id="left" class="col-xs-3 col-md-3 filters">
+				<!-- Button trigger modal -->
+				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="searchmobile">
+					Поиск
+				</button>
 
-			<div id="left">
-
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							</div>
+							<div id="searchmobile">
+								<form action="products">
+									<input class="input_search" type="text" name="keyword" value="{$keyword|escape}" placeholder="Поиск товара"/>
+									<input class="button_search" value="" type="submit" />
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
 				<!-- Поиск-->
 				<div id="search">
 					<form action="products">
@@ -264,6 +296,11 @@
 
 			</div>
 
+			<!-- Основная часть -->
+			<div id="content" class="col-xs-9 col-md-9">
+                {$content}
+			</div>
+
 		</div>
 		<!-- Вся страница (The End)-->
 
@@ -274,4 +311,7 @@
 		<!-- Футер (The End)-->
 	</div>
 </body>
+
+<script src="/design/noski/css/js/vendor.js" type="text/javascript"></script>
+<script src="/design/noski/css/js/dist.js" type="text/javascript"></script>
 </html>

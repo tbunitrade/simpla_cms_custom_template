@@ -1,5 +1,5 @@
 {* Список товаров *}
-
+<div class="div320">div320</div>
 {* Канонический адрес страницы *}
 {if $category && $brand}
 {$canonical="/catalog/{$category->url}/{$brand->url}" scope=parent}
@@ -110,17 +110,17 @@
 
 	{foreach $products as $product}
 	<!-- Товар-->
-	<li class="product">
+	<li class="row">
 		
 		<!-- Фото товара -->
 		{if $product->image}
-		<div class="image">
+		<div class="image col-md-4">
 			<a href="products/{$product->url}"><img src="{$product->image->filename|resize:200:200}" alt="{$product->name|escape}"/></a>
 		</div>
 		{/if}
 		<!-- Фото товара (The End) -->
 
-		<div class="product_info">
+		<div class="product_info col-md-8">
 		<!-- Название товара -->
 		<h3 class="{if $product->featured}featured{/if}"><a data-product="{$product->id}" href="products/{$product->url}">{$product->name|escape}</a></h3>
 		<!-- Название товара (The End) -->
@@ -133,20 +133,94 @@
 		<!-- Выбор варианта товара -->
 		<form class="variants" action="/cart">
 			<table>
-			{foreach $product->variants as $v}
-			<tr class="variant">
-				<td>
-					<input id="variants_{$v->id}" name="variant" value="{$v->id}" type="radio" class="variant_radiobutton" {if $v@first}checked{/if} {if $product->variants|count<2}style="display:none;"{/if}/>
-				</td>
-				<td>
-					{if $v->name}<label class="variant_name" for="variants_{$v->id}">{$v->name}</label>{/if}
-				</td>
-				<td>
-					{if $v->compare_price > 0}<span class="compare_price">{$v->compare_price|convert}</span>{/if}
-					<span class="price">{$v->price|convert} <span class="currency">{$currency->sign|escape}</span></span>
-				</td>
-			</tr>
-			{/foreach}
+                {foreach $product->variants as $v}
+
+					<tr class="variant">
+						<td>
+							<input id="variants_{$v->id}" name="variant" value="{$v->id}" type="radio" class="variant_radiobutton" {if $v@first}checked{/if} {if $product->variants|count<2}style="display:none;"{/if}/>
+						</td>
+						<td>
+                            {if $v->name}<label class="variant_name" for="variants_{$v->id}">{$v->name}</label>{/if}
+						</td>
+						<td>
+                            {if $v->compare_price > 0}<span class="compare_price">{$v->compare_price|convert}</span>{/if}
+							<span class="price">{$v->price|convert} <span class="currency">{$currency->sign|escape}</span></span>
+						</td>
+					</tr>
+
+					<table width="100%" border="0" cellspacing="5" cellpadding="0" class="desc_table">
+
+						<tbody><tr>
+
+							<td class="style9">Носки женские ТМ Акцент (арт. 0196) ( ДОПРОДАЖА - ЦЕНА 2014 ГОДА) </td>
+
+						</tr>
+
+						<tr>
+
+							<td><p>
+									Цвет: голубой<br>
+									Размер: 23-25<br>
+									Состав: хлопок - 80%, ПА - 15%, Спандекс - 5%</p>
+								<div id="cke_pastebin">
+									<table border="1" cellpadding="1" cellspacing="1" style="width: 510px;">
+										<tbody>
+										<tr>
+											<td>
+												В магазинах Украины (розничная цена)</td>
+											<td>
+												&nbsp;20 грн &nbsp;- <b>25</b>&nbsp;грн</td>
+										</tr>
+										<tr>
+											<td>
+												&nbsp;Для клиентов сайта заказ от 250 грн&nbsp;</td>
+											<td>
+												&nbsp;17,26 грн&nbsp;<span style="color: rgb(255, 0, 0);"><strong>СТАРАЯ ЦЕНА</strong></span></td>
+										</tr>
+										<tr>
+											<td>
+												&nbsp;Для клиентов сайта заказ от&nbsp;<strong>200 грн</strong></td>
+											<td>
+												&nbsp;<strong>11,42</strong>&nbsp;грн&nbsp;<strong>ЦЕНА С 7 МАРТА</strong></td>
+										</tr>
+										<tr>
+											<td>
+												Для предпринимателей ОПТ от 1000грн</td>
+											<td>
+												Детали в разделе " ЦЕНЫ ОПТ "</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</td>
+
+						</tr>
+
+						<tr>
+							<td>
+								<table style="width:100%; min-width:400px;">
+									<tbody><tr>
+										<td colspan="2" style="width:50%; font-size:14px; font-weight:bold; text-align:center"></td>
+									</tr>
+									<tr>
+										<td style="width:50%; font-size:13px; font-weight:bold; text-align:center;">
+
+										</td>
+										<td style="width:50%; font-size:13px; font-weight:bold; text-align:center;">
+
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" style="width:50%; font-size:14px; font-weight:bold; text-align:center"><hr></td>
+									</tr>
+									<tr>
+									</tr></tbody></table>
+
+							</td>
+						</tr>
+						</tbody></table>
+
+                {/foreach}
 			</table>
 			<input type="submit" class="button" value="в корзину" data-result-text="добавлено"/>
 		</form>

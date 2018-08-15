@@ -1,8 +1,8 @@
 /*for header*/
-//@import 'modal';
+@import 'modal';
 
 /*header parts*/
-//@import "nav";
+@import "nav";
 //@import "nav-mobile";
 
 /*Templates part*/
@@ -21,6 +21,7 @@
 /*more style for forms*/
 
 @import 'page/registration';
+@import 'product/main';
 //@import 'page/withdrawal';
 //@import 'page/formstyle';
 @import 'function/search';

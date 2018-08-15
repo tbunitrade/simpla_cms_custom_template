@@ -1,16 +1,17 @@
   body {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Tahoma', sans-serif;
     font-size: 16px;
     height: 100%;
     color: $black;
     line-height: 16px;
     position: relative;
     transition: 0.27s;
-    direction: rtl;
+    background: $background;
   }
 
-  .container-fluid {
-
+  .container {
+    background-color: rgb(1, 23, 108);
+    box-shadow: 10px;
   }
 
   .row0 {
@@ -51,7 +52,8 @@
     text-decoration: none;
 
     &:hover {
-      text-decoration: none;
+      text-decoration: underline;
+      color: $coloryellow;
     }
   }
 
@@ -76,13 +78,24 @@
   em,
   span,
   p{
-    font-family: 'Heebo', sans-serif;
-    color: $black;
+    font-family: 'Tahoma', sans-serif;
+    color: $white;
     font-weight: 400;
     margin: 0;
     padding: 0;
-    text-align: center;
+    text-align: justify;
   }
+  a {
+    color: $coloryellow;
+  }
+
+  td,
+  th {
+    color: $white;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
 
   //@font-face {
   //  font-family: 'FontAwesome';

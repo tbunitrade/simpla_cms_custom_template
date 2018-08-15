@@ -6,21 +6,28 @@
   .input_search{
     width: 100%;
     max-width: 170px;
-    height: 20px;
+    height: 30px;
+    line-height: 30px;
     font-size: 12px;
-    border: 1px solid #b0b0b0;
-    display: block;
-    float: left;
+    border-bottom: 1px solid #b0b0b0;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: top;
+    //float: left;
   }
+
   .button_search {
     width: 32px;
-    height: 28px;
-    background-position-y: middle;
-    background: url(../images/search.png) no-repeat;
+    height: 30px;
+
+    background: $white;
+    content: 'F';
     border-style: none;
     cursor: pointer;
-    cursor: hand;
-    display: block;
-    float: left;
+
+    display: inline-block;
+    vertical-align: top;
+
+    //float: left;
   }
 }

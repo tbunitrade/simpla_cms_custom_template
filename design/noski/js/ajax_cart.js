@@ -1,5 +1,5 @@
 // Аяксовая корзина
-$('form.variants').live('submit', function(e) {
+$('form.variants').on('submit', function(e) {
 	e.preventDefault();
 	button = $(this).find('input[type="submit"]');
 	if($(this).find('input[name=variant]:checked').size()>0)

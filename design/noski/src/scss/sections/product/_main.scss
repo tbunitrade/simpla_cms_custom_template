@@ -1,0 +1,167 @@
+/* @group Товар подробно */
+.product {
+
+  .image{
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    margin-right: 20px;
+
+    img {
+      max-width: 300px;
+    }
+  }
+
+  .images {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    img{
+      text-align: center;
+      width: 50px;
+      background-color: $white;
+      border: 1px solid #e0e0e0;
+      float: left;
+      padding: 5px;
+      margin: 4px 10px 10px 0px;
+    }
+  }
+
+  .description{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .features {
+    list-style: none;
+    width: 100%;
+    display: block;
+    clear: both;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+
+    li {
+      padding: 10px 5px 10px 5px;
+      overflow: hidden;
+      border-top: 1px solid #e0e0e0;
+      background-color: #f0f0f0;
+    }
+
+    li.even{
+      background-color: #e9e9e9;
+    }
+
+    label {
+      font-style: normal;
+      display: block;
+      width: 30%;
+      float: left;
+    }
+
+    span {
+      float: left;
+      display: block;
+      width: 70%;
+    }
+  }
+
+  .variants {
+
+    font-size: 12px;
+  }
+
+  .variant td{
+    padding-bottom: 6px;
+    vertical-align: middle;
+  }
+  .compare_price {
+    font-size: 14px;
+    text-decoration: line-through;
+    white-space: nowrap;
+    color: #707070;
+  }
+  .price {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .variant_name {
+    float: left;
+    margin-right: 10px;
+    font-size: 12px;
+  }
+  .variant_radiobutton {
+    margin-right: 5px;
+    margin-left: 0px;
+  }
+  #back_forward {
+    font-size: 14px;
+    margin-bottom: 20px;
+    clear: both;
+  }
+  #back_forward a.prev_page_link{
+    margin-right: 20px;
+  }
+  /* @end — Товар подробно*/
+
+}
+
+#main {
+  position: relative;
+  padding-top: 20px;
+}
+
+.filters {
+  //display: none;
+
+  h2 {
+    font-size: 13px;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 20px;
+    }
+  }
+
+
+  .togglebtn {
+    display: block;
+    display: none;
+    content: '';
+    background: red;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    position: absolute;
+    top:0px;
+    left: 0px;
+  }
+
+  @media (min-width: 450px) {
+    display: block;
+
+    &:before {
+      display: none;
+    }
+  }
+
+
+}
+
+.mobileSearch {
+
+  @media (min-width:600px) {
+    display: none;
+  }
+}

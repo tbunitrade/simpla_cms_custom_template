@@ -1,2 +1,16 @@
 /*modal style*/
 
+#search {
+  display: none;
+
+  @media (min-width:$screen-sm-min) {
+    display: block;
+  }
+}
+
+#searchmobile {
+
+  @media (min-width:$screen-sm-min) {
+    display: none;
+  }
+}

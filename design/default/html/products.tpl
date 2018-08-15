@@ -114,13 +114,13 @@
 		
 		<!-- Фото товара -->
 		{if $product->image}
-		<div class="image">
+		<div class="col-md-4 image">
 			<a href="products/{$product->url}"><img src="{$product->image->filename|resize:200:200}" alt="{$product->name|escape}"/></a>
 		</div>
 		{/if}
 		<!-- Фото товара (The End) -->
 
-		<div class="product_info">
+		<div class="col-md-8 product_info">
 		<!-- Название товара -->
 		<h3 class="{if $product->featured}featured{/if}"><a data-product="{$product->id}" href="products/{$product->url}">{$product->name|escape}</a></h3>
 		<!-- Название товара (The End) -->
